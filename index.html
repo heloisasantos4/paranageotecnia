@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Paraná Geotecnia | Engenharia Geotécnica</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Montserrat",sans-serif;
+    background:#f5f5f3;
+    color:#2b2b2b;
+    line-height:1.7;
+}
+
+header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    height:120px;
+
+    background:rgba(255, 255, 255, 0.95);
+    
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 8%;
+
+    z-index:9999;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.12);
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+
+}
+
+.logo img{
+
+    height:270px;
+    width:200%;
+
+    display:block;
+    margin-top:20px;
+    margin-left:-115px;
+
+}
+
+nav{
+
+    display:flex;
+    gap:45px;
+
+}
+
+nav a{
+
+    color:#0e1d32;
+    text-decoration:none;
+
+    font-weight:600;
+    font-size:125%;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:#329337;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#329337;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+.header-contato{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    
+    margin-left:-600px;
+    margin-right:45px;
+}
+
+.header-contato a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#0e1d32;
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.header-contato a:hover{
+    color:#329337;
+}
+
+.header-contato i{
+    color:#329337;
+    font-size:17px;
+}
+
+.hero{
+
+    margin-top:90px;
+
+    min-height:82vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 8%;
+
+    background:
+
+    linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.58)),
+
+    url("capa.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+
+}
+
+.hero div{
+
+    max-width:720px;
+
+}
+
+.hero h1{
+
+    font-size:3.6rem;
+    line-height:1.15;
+
+    margin-bottom:28px;
+
+    font-weight:800;
+
+}
+
+.hero p{
+
+    font-size:1.15rem;
+
+    margin-bottom:40px;
+
+    color:#ECECEC;
+
+}
+
+.botao{
+
+    display:inline-block;
+
+    background:#329337;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:17px 34px;
+
+    border-radius:5px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.botao:hover{
+
+    background:#1e3d60;
+
+    transform:translateY(-2px);
+
+}
+
+section{
+
+    padding:90px 8%;
+
+}
+
+h2{
+    color:#1b5f38;
+    font-size:45px;
+    margin-bottom:50px;
+    text-align:center;
+    font-weight:700;
+}
+
+#sobre h2{
+    text-align:left;
+    margin-bottom:30px;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:20px 20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.card h3{
+    color:#00220c;
+    
+    margin-bottom:18px;
+
+    min-height:60px;   
+
+}
+
+.sobre{
+
+    display:grid;
+
+    grid-template-columns:55% 45%;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.sobre div{
+
+    max-width:650px;
+
+}
+
+.sobre img{
+
+    width:100%;
+
+    border-radius:12px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+
+}
+
+.sobre p{
+    text-align: justify;
+}
+
+.contato{
+
+    background:#1b5f38;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.contato h2{
+
+    color:white;
+
+}
+
+.contato p{
+
+    margin:10px 0;
+
+}
+
+footer{
+    background:#00220c;
+    color:white;
+    padding:20px 8%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+
+    font-size:14px;
+}
+
+@media(max-width:900px){
+
+header{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    height:auto;
+
+    padding:18px;
+
+}
+
+.logo img{
+
+    height:60px;
+
+    margin-bottom:15px;
+
+}
+
+nav{
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.hero{
+
+    margin-top:140px;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-size:2.4rem;
+
+}
+
+.sobre{
+
+    grid-template-columns:1fr;
+    
+}
+
+}
+
+.card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.card{
+    cursor:pointer;
+}
+
+.whatsapp-float{
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+    z-index: 999999;
+    transition: 0.3s;
+}
+
+.whatsapp-float img{
+    width: 38px;
+    height: 38px;
+}
+
+.whatsapp-float:hover{
+    transform: scale(1.1);
+}
+
+.contato{
+    min-height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:70px 20px;
+
+    color:white;
+}
+
+.contato-conteudo{
+    width:100%;
+    max-width:680px;
+}
+
+.contato h2{
+    color:white;
+
+    font-size:42px;
+    font-weight:800;
+
+    text-align:center;
+
+    margin-bottom:28px;
+}
+
+.contato form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.contato input,
+.contato textarea{
+    width:100%;
+    box-sizing:border-box;
+
+    background:white;
+    color:#333;
+
+    border:1px solid #ccc;
+
+    padding:11px 15px;
+
+    font-family:"Montserrat",sans-serif;
+    font-size:15px;
+
+    outline:none;
+}
+
+.contato input{
+    height:39px;
+}
+
+.contato textarea{
+    height:95px;
+    resize:vertical;
+}
+
+.contato input::placeholder,
+.contato textarea::placeholder{
+    color:#777;
+}
+
+.contato input:focus,
+.contato textarea:focus{
+    border-color:#329337;
+}
+
+.contato button{
+    width:100%;
+    height:40px;
+
+    border:none;
+    border-radius:2px;
+
+    background:#329337;
+    color:white;
+
+    font-family:"Montserrat",sans-serif;
+    font-size:15px;
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.contato button:hover{
+    background:#1e3d60;
+    transform:translateY(-1px);
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-botao{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.dropdown-botao i{
+    font-size:11px;
+}
+
+.dropdown-menu{
+    position:absolute;
+
+    top:100%;
+    left:50%;
+
+    transform:translateX(-50%) translateY(10px);
+
+    width:280px;
+
+    background:white;
+
+    padding:10px 0;
+
+    border-radius:6px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.25s;
+
+    z-index:99999;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+
+    transform:translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a{
+    display:block;
+
+    padding:10px 18px;
+
+    color:#0e1d32;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    white-space:normal;
+
+    transition:.2s;
+}
+
+.dropdown-menu a::after{
+    display:none;
+}
+
+.dropdown-menu a:hover{
+    background:#f1f5f2;
+    color:#329337;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.png" alt="Paraná Geotecnia">
+</div>
+
+<div class="header-contato">
+
+    <a href="https://wa.me/5541996845270" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        (41) 99684-5270
+    </a>
+
+   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=paranasondagens@gmail.com" target="_blank">
+    <i class="fa-solid fa-envelope"></i>
+    paranasondagens@gmail.com
+</a>
+
+</div>
+
+<nav>
+
+    <a href="#sobre">Sobre</a>
+
+    <div class="dropdown">
+
+        <a href="#servicos" class="dropdown-botao">
+            Serviços
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+
+        <div class="dropdown-menu">
+
+<a href="classificacao.html">Classificação de Rochas</a>
+<a href="coleta-deformada.html">Coleta Deformada</a>
+<a href="coleta-indeformado.html">Coleta de Bloco Indeformado</a>
+<a href="coleta-shelby.html">Coleta Shelby</a>
+<a href="dimensionamento.html">Dimensionamento de Fundações</a>
+<a href="dimensionamento-sumidouro.html">Dimensionamento de Sumidouro</a>
+<a href="estabilidade-taludes.html">Estabilidade de Taludes</a>
+<a href="laudo-geotecnico.html">Laudo Geotécnico</a>
+<a href="levantamento.html">Levantamento Planialtimétrico</a>
+<a href="medidor.html">Medidor do Nível d´Água</a>
+<a href="monitoramento.html">Monitoramento do Nível d'Água</a>
+<a href="percolacao.html">Percolação</a>
+<a href="perfil-geologico.html">Perfil Geológico</a>
+<a href="pocos-inspecao.html">Poços de Inspeção</a>
+<a href="trado.html">Sondagem a Trado</a>
+<a href="mista.html">Sondagem Mista</a>
+<a href="rotativa.html">Sondagem Rotativa</a>
+<a href="SPT.html">Sondagem SPT</a>
+
+        </div>
+
+    </div>
+
+    <a href="#contato">Contato</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>Engenharia Geotécnica em Curitiba e região.</h1>
+
+<p>
+A Paraná Geotecnia oferece serviços completos em investigação do solo, sondagens e consultoria geotécnica para obras de pequeno, médio e grande porte.
+</p>
+
+<a href="#contato" class="botao">
+Solicite um orçamento
+</a>
+
+</div>
+
+</section>
+
+<section id="sobre">
+
+<div class="sobre">
+
+<div>
+
+<h2>Sobre a Paraná Sondagens</h2>
+
+<p>
+A Paraná Sondagens presta serviços especializados em engenharia geotécnica, realizando investigações de campo com foco na segurança, qualidade e confiabilidade dos resultados.
+</p>
+
+<br>
+
+<p>
+Nossa equipe trabalha com equipamentos modernos e profissionais qualificados para atender obras residenciais, comerciais, industriais e de infraestrutura em todo o estado do Paraná.
+</p>
+
+</div>
+
+<img src="capa.jpg">
+
+</div>
+
+</section>
+
+<section id="servicos">
+
+<h2>Nossos Serviços</h2>
+
+<div class="cards">
+
+<div class="card" onclick="location.href='classificacao.html'">
+<h3>Classificação de Rochas</h3>
+<p>
+Avaliação das características e da qualidade das rochas. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='coleta-deformada.html'">
+<h3>Coleta Deformada</h3>
+<p>
+Coleta de amostras de solo sem preservação de sua estrutura natural. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='coleta-indeformado.html'">
+<h3>Coleta de Bloco Inderformado</h3>
+<p>
+Retirada de uma amostra de solo preservando sua estrutura e condições naturais. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='coleta-shelby.html'">
+<h3>Coleta Shelby</h3>
+<p>
+Utilizada principalmente para obter amostras indeformadas de solos coesivos. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='dimensionamento.html'">
+<h3>Dimensionamento de Fundações</h3>
+<p>
+Cálculo técnico das fundações conforme as características do solo e as cargas da estrutura. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='dimensionamento-sumidouro.html'">
+<h3>Dimensionamento de Sumidouro</h3>
+<p>
+Cálculo técnico que define as dimensões ideais de um sumidouro. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='estabilidade-taludes.html'">
+<h3>Estabilidade de Taludes</h3>
+<p>
+Avaliação da segurança de encostas, cortes e aterros para prevenir deslizamentos. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='laudo-geotecnico.html'">
+<h3>Laudo Geotécnico</h3>
+<p>
+Emissão de relatórios completos com perfis geológicos e recomendações para projeto. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='levantamento.html'">
+<h3>Levantamento Planialtimétrico</h3>
+<p>
+Serviço topográfico que mede as dimensões e o relevo de um terreno. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='medidor.html'">
+<h3>Medidor de Nível d'Água</h3>
+<p>
+Monitora a posição da água subterrânea e suas variações. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='monitoramento.html'">
+<h3>Monitoramento do Nível d'Água</h3>
+<p>
+Acompanhamento do nível do lençol freático por meio de medições periódicas. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='percolacao.html'">
+<h3>Percolação</h3>
+<p>
+Teste que avalia a capacidade de infiltração da água no solo. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='perfil-geologico.html'">
+<h3>Perfil Geológico</h3>
+<p>
+Representação das camadas de solo e rocha do subsolo. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='pocos-inspecao.html'">
+<h3>Poços de Inspeção</h3>
+<p>
+Abertura e acompanhamento técnico para reconhecimento do perfil do terreno. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='trado.html'">
+<h3>Sondagem a Trado</h3>
+<p>
+Método para caracterização das camadas superficiais do solo, permitindo a coleta de amostras para análises geotécnicas. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='mista.html'">
+<h3>Sondagem Mista</h3>
+<p>
+Técnica que une SPT e sondagem rotativa, caracterizando solos e rochas com maior precisão. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='rotativa.html'">
+<h3>Sondagem Rotativa</h3>
+<p>
+Investigação do subsolo por meio de perfuração rotativa. Ver mais...
+</p>
+</div>
+
+<div class="card" onclick="location.href='SPT.html'">
+<h3>Sondagem SPT</h3>
+<p>
+Execução de sondagens com ensaio SPT conforme normas técnicas. Ver mais...
+</p>
+</div>
+
+</section>
+
+<a href="https://wa.me/5541996845270" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<section class="contato" id="contato">
+
+<div class="contato-conteudo">
+
+<h2>Entre em contato</h2>
+
+<form action="mailto:paranasondagens@gmail.com" method="post" enctype="text/plain">
+
+            <input
+                type="text"
+                name="nome"
+                placeholder="Nome"
+                required
+            >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                required
+            >
+
+            <input
+                type="tel"
+                name="whatsapp"
+                placeholder="WhatsApp"
+            >
+
+            <textarea
+                name="mensagem"
+                placeholder="Mensagem"
+                required
+            ></textarea>
+
+            <button type="submit">
+                <i class="fa-solid fa-envelope"></i>
+                &nbsp; Enviar
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+    <span>© 2026 Paraná Geotecnia - Engenharia Geotécnica</span>
+    <span>Segunda a sexta - 08h00 às 18h00</span>
+    <span>Araucária - Paraná</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sondagem Rotativa | Paraná Geotecnia</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Montserrat",sans-serif;
+    background:#f5f5f3;
+    color:#2b2b2b;
+    line-height:1.8;
+
+}
+
+header{
+
+   position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    height:120px;
+
+    background:rgba(255, 255, 255, 0.95);
+    
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 8%;
+
+    z-index:9999;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.12);
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+
+    height:270px;
+    width:200%;
+
+    display:block;
+    margin-top:20px;
+    margin-left:-115px;
+
+}
+
+nav{
+
+    display:flex;
+    gap:45px;
+
+}
+
+nav a{
+
+    color:#0e1d32;
+    text-decoration:none;
+
+    font-weight:600;
+    font-size:125%;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:#329337;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#329337;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+.banner{
+    margin-top:120px;
+    padding:80px 8%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.banner h1{
+    color:#1b5f38;
+    font-size:45px;
+    line-height:1.1;
+    text-align:center;
+    margin:0;
+}
+
+.banner p{
+
+    color:#1b5f38;
+
+    font-size:30px;
+
+}
+
+main{
+    max-width:1400px;
+    margin:0 auto;
+    padding:80px 6%;
+}
+
+main h2{
+
+    color:#1b5f38;
+
+    font-size:34px;
+
+    border-left:6px solid #329337;
+
+    padding-left:18px;
+
+    margin-bottom:35px;
+
+}
+
+main p{
+
+    text-align:justify;
+    margin-bottom:20px;
+
+}
+
+
+.imagem{
+
+    width:55%;
+    display:block;
+
+    margin:50px 0 50px auto;
+
+    border-radius:16px;
+
+}
+.imagem:hover{
+    transform:scale(1.03);
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
+}
+.lightbox{
+display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,.9);justify-content:center;align-items:center;z-index:99999;}
+.lightbox img{max-width:90%;max-height:90%;border-radius:8px;}
+.fechar{position:absolute;top:20px;right:35px;color:#fff;font-size:50px;cursor:pointer;}
+
+.linha-conteudo{
+    display:flex;
+    align-items:flex-start;
+    gap:40px;
+    margin:50px 0;
+}
+
+.imagem{
+    width:40%;
+    max-width:80%;
+    height:auto;
+    margin:0;
+    border-radius:16px;
+    cursor:pointer;
+    transition:.3s;
+    flex:none;
+}
+
+.beneficios{
+    flex:1;
+
+    background:#fff;
+    padding:10px;
+
+    border-left:6px solid #329337;
+    border-radius:15px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    list-style:none;
+}
+
+.beneficios li{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:18px;
+}
+
+.beneficios li::before{
+    content:"✔";
+    position:absolute;
+    left:0;
+    color:#329337;
+    font-weight:bold;
+}
+
+@media (max-width:900px){
+
+    .linha-conteudo{
+        flex-direction:column;
+    }
+
+    .imagem,
+    .beneficios{
+        width:100%;
+    }
+
+}
+.botao{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:#329337;
+    color:white;
+
+    padding:15px 30px;
+
+    text-decoration:none;
+
+    border-radius:5px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.botao:hover{
+
+    background:#1e3d60;
+
+}
+
+footer{
+    background:#00220c;
+    color:white;
+    padding:20px 8%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+
+    font-size:14px;
+}
+
+@media(max-width:900px){
+
+header{
+
+    flex-direction:column;
+    gap:20px;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+.banner h1{
+
+    font-size:2.2rem;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+    <img src="logo.png" alt="Paraná Geotecnia">
+</div>
+
+<nav>
+
+<a href="index.html">Início</a>
+<a href="index.html#sobre">Sobre</a>
+<a href="index.html#servicos">Serviços</a>
+<a href="index.html#contato">Contato</a>
+
+</nav>
+
+</header>
+
+<section class="banner">
+
+<h1>Sondagem Rotativa</h1>
+
+</section>
+
+<main>
+
+<h2>Sondagem Rotativa</h2>
+
+<p>
+Sondagem Rotativa é um método utilizado para perfurar o solo e a rocha, com o objetivo de conhecer as características do subsolo para projetos de engenharia civil, mineração, barragens, túneis, fundações e obras de infraestrutura.
+</p>
+
+<div class="linha-conteudo">
+
+ <ul class="beneficios">
+
+        <li>Fundações de edifícios altos.</li>
+
+        <li>Pontes e viadutos.</li>
+
+        <li>Barragens.</li>
+
+        <li>Túneis.</li>
+
+        <li>Mineração.</li>
+
+        <li>Obras em locais com ocorrência de rocha.</li>
+
+    </ul>
+
+    <img src="ROTATIVA.jpg"
+         class="imagem"
+         alt="Sondagem Rotativa"
+         onclick="abrirImagem(this.src)">
+</div>
+
+<a href="index.html" class="botao">
+← Voltar para o site
+</a>
+
+</main>
+
+<footer>
+    <span>© 2026 Paraná Geotecnia - Engenharia Geotécnica</span>
+    <span>Segunda a sexta - 08h00 às 18h00</span>
+    <span>Araucária - Paraná</span>
+</footer>
+
+
+<div id="lightbox" class="lightbox" onclick="fecharImagem()">
+<span class="fechar">&times;</span>
+<img id="imgGrande" src="" alt="">
+</div>
+<script>
+function abrirImagem(src){
+document.getElementById('imgGrande').src=src;
+document.getElementById('lightbox').style.display='flex';
+}
+function fecharImagem(){
+document.getElementById('lightbox').style.display='none';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')fecharImagem();});
+</script>
+</body>
+</html>
