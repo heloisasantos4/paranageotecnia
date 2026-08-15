@@ -50,7 +50,7 @@ header{
     align-items:center;
     justify-content:space-between;
 
-    padding:0 8%;
+    padding:0 3%;
 
     z-index:9999;
 
@@ -67,12 +67,67 @@ header{
 
 .logo img{
 
-    height:270px;
-    width:200%;
+    height:260px;
+    width:190%;
 
     display:block;
     margin-top:20px;
     margin-left:-115px;
+
+}
+
+.contato-header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    flex:1;
+
+    justify-content:center;
+}
+
+.contato-header a{
+    color:#0e1d32;
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    white-space:nowrap;
+}
+
+.contato-header i{
+    color:#329337;
+}
+
+@media(max-width:900px){
+
+    .contato-header{
+        gap:10px;
+    }
+
+    .contato-header a{
+        font-size:12px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .contato-header{
+        flex-direction:column;
+        gap:2px;
+    }
+
+    .contato-header a{
+        font-size:11px;
+    }
 
 }
 
@@ -145,7 +200,7 @@ nav a:hover::after{
     url("capa.jpg");
 
     background-size:cover;
-    background-position:center;
+    background-position:center 5%;
 
     color:white;
 
@@ -602,6 +657,20 @@ nav{
 <div class="logo">
 <img src="logo.png" alt="Paraná Geotecnia">
 </div>
+
+<div class="contato-header">
+
+    <a href="tel:+5541996845270">
+        <i class="fa-solid fa-phone"></i>
+        (41) 99684-5270
+    </a>
+
+    <a href="mailto:paranasondagens@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+        paranasondagens@gmail.com
+    </a>
+
+</div>
     
 <nav>
 
@@ -672,7 +741,7 @@ Solicite um orçamento
 <h2>Sobre a Paraná Sondagens</h2>
 
 <p>
-A Paraná Sondagens presta serviços especializados em engenharia geotécnica, realizando investigações de campo com foco na segurança, qualidade e confiabilidade dos resultados.
+A Paraná Geotecnia presta serviços especializados em engenharia geotécnica, realizando investigações de campo com foco na segurança, qualidade e confiabilidade dos resultados.
 </p>
 
 <br>
